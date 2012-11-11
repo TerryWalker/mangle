@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @digital_image.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @digital_image.author %>
+</p>
+
+<p>
+  <b>Original publisher:</b>
+  <%= @digital_image.original_publisher %>
+</p>
+
+<p>
+  <b>Publication date:</b>
+  <%= @digital_image.publication_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_digital_image_path(@digital_image) %> |
+<%= link_to 'Back', digital_images_path %>

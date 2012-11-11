@@ -1,0 +1,29 @@
+<h1>Listing digital_images</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Original publisher</th>
+    <th>Publication date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @digital_images.each do |digital_image| %>
+  <tr>
+    <td><%= digital_image.title %></td>
+    <td><%= digital_image.author %></td>
+    <td><%= digital_image.original_publisher %></td>
+    <td><%= digital_image.publication_date %></td>
+    <td><%= link_to 'Show', digital_image %></td>
+    <td><%= link_to 'Edit', edit_digital_image_path(digital_image) %></td>
+    <td><%= link_to 'Destroy', digital_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Digital image', new_digital_image_path %>

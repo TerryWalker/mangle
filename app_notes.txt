@@ -1,0 +1,3 @@
+rails app : scaffold for records input from clippings : potentially upload image with it
+export to marc data file
+import into polaris
