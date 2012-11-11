@@ -1,4 +1,4 @@
-<%= form_for(@digital_image) do |f| %>
+<%= form_for @digital_image, :html => {:multipart => true} do |f| %>
   <% if @digital_image.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@digital_image.errors.count, "error") %> prohibited this digital_image from being saved:</h2>
@@ -27,6 +27,15 @@
     <%= f.label :publication_date %><br />
     <%= f.date_select :publication_date %>
   </div>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= image_tag(@digital_image.image_url) if @digital_image.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -6,6 +6,7 @@
     <th>Author</th>
     <th>Original publisher</th>
     <th>Publication date</th>
+    <th>Image</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= digital_image.author %></td>
     <td><%= digital_image.original_publisher %></td>
     <td><%= digital_image.publication_date %></td>
+    <td><%= image_tag(digital_image.image_url) if digital_image.image? %></td>
     <td><%= link_to 'Show', digital_image %></td>
     <td><%= link_to 'Edit', edit_digital_image_path(digital_image) %></td>
     <td><%= link_to 'Destroy', digital_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
