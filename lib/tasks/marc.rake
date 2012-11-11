@@ -16,15 +16,16 @@ task :export, [:type] => [:environment] do |t, args|
 	end
 
 	# writing a record
-	writer = MARC::Writer.new('marc.dat')
+	writer = MARC::Writer.new("#{args[:type]}.mrc")
 	writer.write(record)
 	writer.close()
 end
 
 desc 'test reading the marc file'
-task :read_marc => [:environment] do
+task :read_marc, [:type] => [:environment] do|t, args|
+	args.with_defaults(:type => "DigitalImage")
 	# reading records from a batch file
-	reader = MARC::Reader.new('marc.dat')
+	reader = MARC::Reader.new("#{args[:type]}.mrc")
 	puts reader.inspect
 	reader.each do |r|
 		puts r.inspect
